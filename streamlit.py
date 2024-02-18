@@ -9,7 +9,7 @@ tokenizer = T5Tokenizer.from_pretrained('knowledgator/comprehend_it-multilingual
 classifier = ZeroShotClassificationPipeline(model=model, tokenizer=tokenizer,ypothesis_template = '{}', encoder_decoder = True)
 st.title('Natural Language Project')
 st.markdown('Hafizh Zaki Prasetyo Adi|hafizhzaki6661@gmail.com|https://www.linkedin.com/in/hafizhzpa/')
-part=st.sidebar.radio("",["sentimen", "emosi", "label khusus"],captions = ["menentukan label sentimen", "menentukan label emosi", "klasifikasi berdasarkan label yang ditentukan"])
+part=st.sidebar.radio("project",["sentimen", "emosi", "label khusus"],captions = ["menentukan label sentimen", "menentukan label emosi", "klasifikasi berdasarkan label yang ditentukan"])
 text = st.text_input('text', 'Saya sudah menggunakan produk ini selama sebulan dan saya sangat puas dengan hasilnya')
 multiclass = st.checkbox('Izinkan multi label')
 if part=='label khusus':
