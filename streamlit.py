@@ -42,7 +42,7 @@ if part=='sentimen':
 if part=='emotion':
     start=time.time()
     if st.button('run'):
-        candidate_labels = ["bahagia", "sedih", "takut", "marah", "antisipasi", "terkejut", "jijik','percaya"]
+        candidate_labels = ["bahagia", "sedih", "takut", "marah", "antisipasi", "terkejut", "jijik","percaya"]
         result=classifier(text, candidate_labels, multi_label=multiclass)
         if not multiclass:
             st.text(f"label:{result['labels'][0]}")
