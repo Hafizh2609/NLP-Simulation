@@ -20,25 +20,25 @@ if part=='label khusus':
         result=classifier(text, candidate_labels, multi_label=multiclass)
         if not multiclass:
             st.text(f"label:{result['labels'][0]}")
-            st.text(f"skor:{result['scores'][0]}")
+            st.text(f"skor:{round(result['scores'][0],2)}")
         else:
             bool_score=[score>0.5 for score in result['scores']]
             st.text(f"label:{','.join([label for i,label in enumerate(result['labels']) if bool_score[i]])}")
             st.text(f"skor:{','.join([skor for i,skor in enumerate(result['scores']) if bool_score[i]])}")
-        st.text(f"waktu:{time.time()-start}")
+        st.text(f"waktu:{round(time.time()-start,2)}")
 if part=='sentimen':
     start=time.time()
     if st.button('run'):
-        candidate_labels = ["positive','negative','neutral"]
+        candidate_labels = ['positive','negative','neutral']
         result=classifier(text, candidate_labels, multi_label=multiclass)
         if not multiclass:
             st.text(f"label:{result['labels'][0]}")
-            st.text(f"skor:{result['scores'][0]}")
+            st.text(f"skor:{round(result['scores'][0],2)}")
         else:
             bool_score=[score>0.5 for score in result['scores']]
             st.text(f"label:{','.join([label for i,label in enumerate(result['labels']) if bool_score[i]])}")
             st.text(f"skor:{','.join([skor for i,skor in enumerate(result['scores']) if bool_score[i]])}")
-        st.text(f"waktu:{time.time()-start}")
+        st.text(f"waktu:{round(time.time()-start,2)}")
 if part=='emotion':
     start=time.time()
     if st.button('run'):
@@ -46,9 +46,9 @@ if part=='emotion':
         result=classifier(text, candidate_labels, multi_label=multiclass)
         if not multiclass:
             st.text(f"label:{result['labels'][0]}")
-            st.text(f"skor:{result['scores'][0]}")
+            st.text(f"skor:{round(result['scores'][0],2)}")
         else:
             bool_score=[score>0.5 for score in result['scores']]
             st.text(f"label:{','.join([label for i,label in enumerate(result['labels']) if bool_score[i]])}")
             st.text(f"skor:{','.join([skor for i,skor in enumerate(result['scores']) if bool_score[i]])}")
-        st.text(f"waktu:{time.time()-start}")
+        st.text(f"waktu:{round(time.time()-start,2)}")
